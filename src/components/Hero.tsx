@@ -72,7 +72,7 @@ export const Hero = () => {
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-end">
           <div className="glass p-8 rounded-3xl max-w-sm">
             <p className="text-lg font-medium leading-relaxed mb-6">
-              I build AI systems that run fast and deploy to the edge. Performance at scale, not just in demos.
+              Specializing in High-Performance AI Systems and Edge Computing Solutions.
             </p>
             <div className="flex items-center justify-between">
               <a href="mailto:Shanondsilva2135@gmail.com" className="font-bold underline underline-offset-4">Shanondsilva2135@gmail.com</a>

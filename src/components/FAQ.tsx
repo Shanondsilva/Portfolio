@@ -6,13 +6,13 @@ import { cn } from '../lib/utils';
 const faqs = [
   {
     question: "MORE ABOUT ME?",
-    answer: "I'm an AI Engineer who turns messy, \"impossible\" data into systems that actually work. I've built agentic workflows handling millions of requests and hit sub-450ms inference in production. The best AI doesn't just process information. It solves real problems. That's what I focus on."
+    answer: "I’m an AI Engineer who thrives on turning \"impossible\" data into autonomous, high-performing systems. From orchestrating agentic workflows for millions of users to hitting sub-450ms inference times, I build infrastructure that stays reliable under pressure. I believe the best AI doesn't just process information it solves real-world problems with precision and a bit of engineering grit."
   },
   {
     question: "HOW CAN I CONTACT WITH YOU?",
     answer: (
       <>
-         Happy to talk about new projects, technical challenges, or anything AI-related. Best way to reach me is <a href="mailto:Shanondsilva2135@gmail.com" className="text-accent hover:underline">Email</a> or <a href="https://www.linkedin.com/in/shanondsilva/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">LinkedIn</a>. I usually reply within 24 hours.
+        I’m always open to discussing new projects, technical challenges, or the future of agentic workflows. The best way to reach me is via <a href="mailto:Shanondsilva2135@gmail.com" className="text-accent hover:underline">Email</a> or by connecting with me on <a href="https://www.linkedin.com/in/shanondsilva/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">LinkedIn</a>. I usually get back to people within 24 hours.
       </>
     )
   },
@@ -24,23 +24,23 @@ const faqs = [
     question: "WHICH TYPE OF SERVICES YOU PROVIDE?",
     answer: (
       <div className="space-y-4">
-        <p>Here's what I do:</p>
+        <p>I provide end-to-end AI engineering services focused on high-performance infrastructure and agentic design:</p>
         <ul className="space-y-4">
           <li>
             <strong className="block text-ink font-bold uppercase text-xs tracking-widest mb-1">Agentic AI Orchestration</strong>
-            <p>I design multi-agent workflows that automate complex data tasks. Think autonomous pipelines, not just chatbots.</p>
+            <p>I design autonomous, multi-agent workflows that automate complex data tasks with precision.</p>
           </li>
           <li>
             <strong className="block text-ink font-bold uppercase text-xs tracking-widest mb-1">Scalable Infrastructure</strong>
-            <p>Backend systems on FastAPI and Kubernetes that handle millions of requests without going down.</p>
+            <p>I build high-density, fault-tolerant backend systems (FastAPI/Kubernetes) that handle millions of requests.</p>
           </li>
           <li>
             <strong className="block text-ink font-bold uppercase text-xs tracking-widest mb-1">Real-Time Performance</strong>
-            <p>I optimize AI models for sub-450ms inference. Fast enough for real-time security and detection in production.</p>
+            <p>I optimize AI models for sub-450ms inference, ensuring lightning-fast, production-ready security and detection.</p>
           </li>
           <li>
             <strong className="block text-ink font-bold uppercase text-xs tracking-widest mb-1">Growth-Focused Engineering</strong>
-            <p>I connect the technical side with business goals. Good AI should move metrics, not just impress engineers.</p>
+            <p>I bridge the gap between deep-tech and market strategy to build AI products that drive actual business results.</p>
           </li>
         </ul>
       </div>

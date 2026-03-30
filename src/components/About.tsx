@@ -11,7 +11,7 @@ export const About = () => {
       
       <div className="text-center max-w-4xl mx-auto mb-20">
         <h2 className="text-4xl md:text-5xl font-bold tracking-tighter leading-tight">
-           I build AI that doesn't just respond. It acts. I go beyond prompts to create agents and multi-modal systems that hold up in production. The gap between "COOL DEMO" and "RELIABLE SYSTEM" is where I work.
+          I build AI that doesn’t just respond, but acts. My focus is on moving beyond simple prompts to engineer agentic workflows and multi-modal systems that actually scale in production. I bridge the gap between "COOL DEMO" and "RELIABLE SYSTEM."
         </h2>
       </div>
 
