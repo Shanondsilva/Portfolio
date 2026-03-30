@@ -7,9 +7,9 @@ import { scrollWithOffset } from '../lib/utils';
 
 const mesaqImages = [
   'https://i.ibb.co/ZQNJ7xF/Untitled-design.png',
-  'https://i.ibb.co/gFQL3fZb/Whats-App-Image-2026-03-28-at-5-00-48-AM-portrait.png',
-  'https://i.ibb.co/mV9dJ2yV/Detox-mode-and-calendar.png',
-  'https://i.ibb.co/G3JPt3pM/Queue-and-session.png',
+  'https://i.ibb.co/XrNCjSDh/257shots-so.png',
+  'https://i.ibb.co/1JQq1LZf/Detox-mode-and-calendar.png',
+  'https://i.ibb.co/M5nT1tmy/Queue-and-session.png',
 ];
 
 const projects = [

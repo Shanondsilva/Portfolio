@@ -42,17 +42,17 @@ I built this solo from the ground up. Google OAuth handles login. Sessions auto-
         description: 'Clean landing page with Google OAuth and email sign-in. Once logged in, the dashboard shows your greeting, streak stats, session count, and an "Up next" video shelf. Hit "Start Meal Session" to begin. Desktop gets a sidebar, mobile gets bottom nav.',
       },
       {
-        src: 'https://i.ibb.co/gFQL3fZb/Whats-App-Image-2026-03-28-at-5-00-48-AM-portrait.png',
+        src: 'https://i.ibb.co/XrNCjSDh/257shots-so.png',
         caption: 'Mobile-first dashboard',
         description: 'Built mobile-first because that\'s how people eat. Your streak, sessions, and video queue are all visible without scrolling. One big action button. Bottom nav for quick access. Everything works one-handed.',
       },
       {
-        src: 'https://i.ibb.co/mV9dJ2yV/Detox-mode-and-calendar.png',
+        src: 'https://i.ibb.co/1JQq1LZf/Detox-mode-and-calendar.png',
         caption: 'Settings, Detox Mode, and Streak Calendar',
         description: 'Settings include account management, timezone config, and Detox Mode, which filters videos under 5 minutes. The streak calendar works like GitHub\'s contribution graph. Each green square is a completed meal session over the last 3 months.',
       },
       {
-        src: 'https://i.ibb.co/G3JPt3pM/Queue-and-session.png',
+        src: 'https://i.ibb.co/M5nT1tmy/Queue-and-session.png',
         caption: 'Session setup and queue preview',
         description: 'This is the core loop. Set your meal duration with a slider (5-60 min), pick a queue style (shuffle or shortest-first), and preview your auto-built queue. The session summary shows watch time, video count, and total meal time. No algorithm decides for you.',
       },
