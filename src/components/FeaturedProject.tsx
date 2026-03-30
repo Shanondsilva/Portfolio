@@ -5,7 +5,7 @@ import { ExternalLink, Github, BookOpen, ChevronLeft, ChevronRight, Star, ArrowR
 
 const images = [
   {
-    src: 'https://i.ibb.co/PvB4GWpC/Mesa-Q.png',
+    src: 'https://i.ibb.co/ZQNJ7xF/Untitled-design.png',
     caption: 'Landing page and dashboard, desktop view',
   },
   {

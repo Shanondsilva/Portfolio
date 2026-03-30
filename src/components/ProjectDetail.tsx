@@ -37,7 +37,7 @@ I built this solo from the ground up. Google OAuth handles login. Sessions auto-
     ],
     images: [
       {
-        src: 'https://i.ibb.co/PvB4GWpC/Mesa-Q.png',
+        src: 'https://i.ibb.co/ZQNJ7xF/Untitled-design.png',
         caption: 'Landing page and dashboard, desktop view',
         description: 'Clean landing page with Google OAuth and email sign-in. Once logged in, the dashboard shows your greeting, streak stats, session count, and an "Up next" video shelf. Hit "Start Meal Session" to begin. Desktop gets a sidebar, mobile gets bottom nav.',
       },

@@ -6,7 +6,7 @@ import { HashLink } from 'react-router-hash-link';
 import { scrollWithOffset } from '../lib/utils';
 
 const mesaqImages = [
-  'https://i.ibb.co/PvB4GWpC/Mesa-Q.png',
+  'https://i.ibb.co/ZQNJ7xF/Untitled-design.png',
   'https://i.ibb.co/gFQL3fZb/Whats-App-Image-2026-03-28-at-5-00-48-AM-portrait.png',
   'https://i.ibb.co/mV9dJ2yV/Detox-mode-and-calendar.png',
   'https://i.ibb.co/G3JPt3pM/Queue-and-session.png',
@@ -17,7 +17,7 @@ const projects = [
     id: '001',
     title: 'MesaQ',
     category: 'Full-Stack PWA',
-    image: 'https://i.ibb.co/PvB4GWpC/Mesa-Q.png',
+    image: 'https://i.ibb.co/ZQNJ7xF/Untitled-design.png',
     color: 'bg-orange-500',
     hasSlideshow: true,
   },
