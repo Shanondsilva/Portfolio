@@ -10,6 +10,7 @@ export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const isRoastDPage = location.pathname === '/project/002';
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -53,7 +54,10 @@ export const Navbar = () => {
                 smooth 
                 to={link.to} 
                 scroll={scrollWithOffset}
-                className="hover:text-accent transition-colors"
+                className={cn(
+                  "transition-colors",
+                  isRoastDPage ? "hover:text-[#86102a]" : "hover:text-accent"
+                )}
               >
                 {link.name}
               </HashLink>
@@ -63,13 +67,13 @@ export const Navbar = () => {
 
         <div className="flex items-center gap-4">
           <div className="hidden sm:flex items-center gap-2 mr-2">
-            <a href="mailto:shanondsilva2135@gmail.com" className="p-2 hover:text-accent transition-colors">
+            <a href="mailto:shanondsilva2135@gmail.com" className={cn("p-2 transition-colors", isRoastDPage ? "hover:text-[#86102a]" : "hover:text-accent")}>
               <Mail className="w-4 h-4" />
             </a>
-            <a href="https://github.com/Shanondsilva" target="_blank" rel="noopener noreferrer" className="p-2 hover:text-accent transition-colors">
+            <a href="https://github.com/Shanondsilva" target="_blank" rel="noopener noreferrer" className={cn("p-2 transition-colors", isRoastDPage ? "hover:text-[#86102a]" : "hover:text-accent")}>
               <Github className="w-4 h-4" />
             </a>
-            <a href="https://www.linkedin.com/in/shanondsilva/" target="_blank" rel="noopener noreferrer" className="p-2 hover:text-accent transition-colors">
+            <a href="https://www.linkedin.com/in/shanondsilva/" target="_blank" rel="noopener noreferrer" className={cn("p-2 transition-colors", isRoastDPage ? "hover:text-[#86102a]" : "hover:text-accent")}>
               <Linkedin className="w-4 h-4" />
             </a>
           </div>
@@ -77,14 +81,17 @@ export const Navbar = () => {
             smooth 
             to="/#contact" 
             scroll={scrollWithOffset}
-            className="hidden sm:block px-6 py-2 bg-ink text-white rounded-full text-xs font-bold uppercase tracking-widest hover:bg-accent transition-colors"
+            className={cn(
+              "hidden sm:block px-6 py-2 bg-ink text-white rounded-full text-xs font-bold uppercase tracking-widest transition-colors",
+              isRoastDPage ? "hover:bg-[#86102a]" : "hover:bg-accent"
+            )}
           >
             Let's Talk
           </HashLink>
           
           <button 
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 hover:text-accent transition-colors"
+            className={cn("md:hidden p-2 transition-colors", isRoastDPage ? "hover:text-[#86102a]" : "hover:text-accent")}
             aria-label="Toggle Menu"
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -109,7 +116,10 @@ export const Navbar = () => {
                   to={link.to} 
                   scroll={scrollWithOffset}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-3xl font-bold tracking-tighter hover:text-accent transition-colors"
+                  className={cn(
+                    "text-3xl font-bold tracking-tighter transition-colors",
+                    isRoastDPage ? "hover:text-[#86102a]" : "hover:text-accent"
+                  )}
                 >
                   {link.name}
                 </HashLink>
@@ -117,13 +127,13 @@ export const Navbar = () => {
               <div className="h-[1px] bg-ink/10 my-2" />
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-4">
-                  <a href="mailto:shanondsilva2135@gmail.com" className="p-2 bg-ink/5 rounded-full hover:text-accent transition-colors">
+                  <a href="mailto:shanondsilva2135@gmail.com" className={cn("p-2 bg-ink/5 rounded-full transition-colors", isRoastDPage ? "hover:text-[#86102a]" : "hover:text-accent")}>
                     <Mail className="w-5 h-5" />
                   </a>
-                  <a href="https://github.com/Shanondsilva" target="_blank" rel="noopener noreferrer" className="p-2 bg-ink/5 rounded-full hover:text-accent transition-colors">
+                  <a href="https://github.com/Shanondsilva" target="_blank" rel="noopener noreferrer" className={cn("p-2 bg-ink/5 rounded-full transition-colors", isRoastDPage ? "hover:text-[#86102a]" : "hover:text-accent")}>
                     <Github className="w-5 h-5" />
                   </a>
-                  <a href="https://www.linkedin.com/in/shanondsilva/" target="_blank" rel="noopener noreferrer" className="p-2 bg-ink/5 rounded-full hover:text-accent transition-colors">
+                  <a href="https://www.linkedin.com/in/shanondsilva/" target="_blank" rel="noopener noreferrer" className={cn("p-2 bg-ink/5 rounded-full transition-colors", isRoastDPage ? "hover:text-[#86102a]" : "hover:text-accent")}>
                     <Linkedin className="w-5 h-5" />
                   </a>
                 </div>
@@ -147,6 +157,9 @@ export const Navbar = () => {
 
 export const ScrollProgress = () => {
   const { scrollYProgress } = useScroll();
+  const location = useLocation();
+  const isRoastDPage = location.pathname === '/project/002';
+  
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
@@ -155,7 +168,10 @@ export const ScrollProgress = () => {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 right-0 h-1 bg-accent z-[60] origin-left"
+      className={cn(
+        "fixed top-0 left-0 right-0 h-1 z-[60] origin-left",
+        isRoastDPage ? "bg-[#86102a]" : "bg-accent"
+      )}
       style={{ scaleX }}
     />
   );

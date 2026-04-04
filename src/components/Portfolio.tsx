@@ -16,9 +16,9 @@ const projects = [
   },
   {
     id: '002',
-    title: 'Showcase A4',
-    category: 'Book Cover',
-    image: 'https://picsum.photos/seed/book/800/600',
+    title: 'RoastD',
+    category: 'RoastD',
+    image: 'https://i.ibb.co/wFhB6HFp/Screenshot-2026-04-03-181016.png',
     color: 'bg-blue-500'
   },
   {

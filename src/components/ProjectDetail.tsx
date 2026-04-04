@@ -3,7 +3,30 @@ import { useParams, Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { ArrowLeft, ExternalLink, Github } from 'lucide-react';
 
-const projectData = {
+interface Project {
+  title: string;
+  tagline: string;
+  category: string;
+  description: string[];
+  techStack: string[];
+  mediumLink: string;
+  image: string;
+  link: string;
+  base44Link?: string;
+  sourceLink: string;
+  video?: {
+    url: string;
+    description: string;
+  };
+  screenshots: {
+    image: string;
+    title: string;
+    description: string;
+    isPortrait?: boolean;
+  }[];
+}
+
+const projectData: Record<string, Project> = {
   '001': {
     title: 'MesaQ',
     tagline: 'Your meal. Your queue.',
@@ -43,20 +66,38 @@ const projectData = {
     ]
   },
   '002': {
-    title: 'Showcase A4',
-    tagline: 'Elegant Book Cover Design',
-    category: 'Book Cover',
+    title: 'RoastD',
+    tagline: 'Paste it. Pick your poison. Get roasted.',
+    category: 'RoastD',
     description: [
-      "A minimalist and modern book cover design for 'Showcase A4', focusing on clean typography and balanced composition.",
-      "The design utilizes negative space to create a sense of sophistication and focus, making it stand out in a crowded marketplace.",
-      "Created using Adobe Creative Suite, this project explores the intersection of traditional print aesthetics and contemporary digital design principles."
+      "RoastD",
+      "The AI that turns your best work into its favorite snack. Paste your profile, pick a persona, and prepare for a brutal, **high-fidelity reality check**.",
+      "The thinking behind it",
+      "I built this twice on purpose to test the limits of speed vs. control. Once with **Base44** (an AI app builder) and once with **Claude Code** (writing every line manually). The Base44 version went from idea to deployed app in **5 minutes**. The Claude Code version took **8 hours** but gave me custom animations, feedback loop detection, and **full code ownership**. The side-by-side comparison became the ultimate stress test for modern AI dev tools.",
+      "**Roastd** is an AI-powered document roasting app. You paste your **CV, dating profile, startup pitch, or bio**, pick a roast intensity and a persona, and the AI rips it apart from **three adversarial perspectives**. It also tells you what you did right, gives you **five one-line fixes**, and rewrites the whole thing in your voice. Download as **PDF or DOCX**, or share with a link."
     ],
-    techStack: ["Adobe InDesign", "Photoshop", "Illustrator", "Typography"],
-    mediumLink: "",
-    image: 'https://picsum.photos/seed/book/800/600',
-    link: '#',
-    sourceLink: '#',
-    screenshots: []
+    techStack: ["REACT", "VERCEL EDGE FUNCTIONS", "GROQ API", "LLM EVALUATION", "JSPDF", "DOCX", "BASE44"],
+    mediumLink: "https://medium.com/@shanondsilva2135/i-built-the-same-ai-app-twice-once-with-an-ai-app-builder-once-from-my-terminal-4a4b73bc3967?postPublishedType=initial",
+    image: 'https://i.ibb.co/wFhB6HFp/Screenshot-2026-04-03-181016.png',
+    link: 'https://roastd-j9hjii4wf-shanondsilva2135-1177s-projects.vercel.app/',
+    base44Link: '#',
+    sourceLink: 'https://github.com/Shanondsilva/RoastD',
+    video: {
+      url: "https://www.youtube.com/embed/eoDU5eSJ6z4",
+      description: "This project serves as a side-by-side case study between two development philosophies. As shown in the walkthrough, the first version was built using **Base44** (an AI app builder), while the second was engineered from scratch using **Claude Code**.\n\nThe differences are immediately visible across three key pillars:\n\n• **UI & Micro-interactions**: While **Base44** delivered a functional interface in minutes, the **Claude Code** version features six custom spring-based animations and a \"Heat Score\" visualizer. These details transform a static form into a tactile, premium user experience.\n\n• **Information Depth**: The custom-built version moves beyond generic templates. It integrates an **LLM-as-judge evaluation pipeline**, ensuring that the \"roasts\" are context-aware, category-specific, and objectively high-quality.\n\n• **Architectural Integrity & Security**: The custom build includes logic that the automated builder couldn't reach—specifically a **feedback-loop detection system**. This prevents the AI from \"grading its own work\" if a user resubmits an AI-generated rewrite, protecting the integrity of the output.\n\n**The Takeaway:** No matter the tool, the outcome depends entirely on strategic selection. **Base44** is the gold standard for rapid prototyping and validation; **Claude Code** is the choice for high-stakes, implementation-ready software where every animation and logic gate must be precise."
+    },
+    screenshots: [
+      {
+        image: "https://i.ibb.co/rK8JvHH2/692-1x-shots-so.png",
+        title: "Base44 vs. Claude Code",
+        description: "**Left:** **Base44** generated a full landing page with CTA, trust badges, and a \"How it works\" section from a single prompt. Working app in **under 5 minutes**, no code touched.\n\n**Right:** **Claude Code** gave five category pills, intensity selector with emoji morph, persona picker, auto-resizing text area with live word count and paste detection. Every element **hand-built** with custom transitions and spring easing."
+      },
+      {
+        image: "https://i.ibb.co/9k1JHf24/834-1x-shots-so.png",
+        title: "Results Page Comparison",
+        description: "**Left:** **Base44's** generated results page with clarity, impact, and originality scores, plus thumbs up/down feedback on each tip. Clean layout, **zero custom code**.\n\n**Right:** Typewriter quote that types out character by character, animated heat score bar with a blue-to-yellow-to-red gradient, and perspective cards that expand from thin coloured lines. Six custom animations, all **pure CSS and vanilla JS**."
+      }
+    ]
   },
   '003': {
     title: 'The Duct',
@@ -122,7 +163,7 @@ export const ProjectDetail = () => {
           transition={{ duration: 0.6 }}
         >
           <div className="mb-4">
-            <span className="text-xs font-bold tracking-widest uppercase text-accent">{project.category}</span>
+            <span className={`text-xs font-bold tracking-widest uppercase ${project.title === 'RoastD' ? 'text-[#86102a]' : 'text-accent'}`}>{project.category}</span>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tighter uppercase mt-2">
               {project.title}
             </h1>
@@ -133,17 +174,47 @@ export const ProjectDetail = () => {
           </h2>
           
           <div className="space-y-8 mb-12">
-            {project.description.map((para, i) => (
-              <p key={i} className="text-lg text-gray-600 leading-relaxed">
-                {para}
-              </p>
-            ))}
+            {project.description.map((para, i) => {
+              const isRoastD = project.title === 'RoastD';
+              const isHeading = para === "RoastD" || para === "The thinking behind it";
+              
+              // Simple bold parser for **text**
+              const parts = para.split(/(\*\*.*?\*\*)/g);
+              const renderedPara = parts.map((part, index) => {
+                if (part.startsWith('**') && part.endsWith('**')) {
+                  return (
+                    <strong 
+                      key={index} 
+                      className="font-bold text-ink"
+                    >
+                      {part.slice(2, -2)}
+                    </strong>
+                  );
+                }
+                return part;
+              });
+
+              return (
+                <p 
+                  key={i} 
+                  className={`text-lg leading-relaxed ${
+                    isHeading 
+                      ? "text-3xl font-bold text-ink mb-2 mt-8 first:mt-0" 
+                      : "text-gray-600"
+                  }`}
+                >
+                  {renderedPara}
+                </p>
+              );
+            })}
             {project.mediumLink && (
               <a 
                 href={project.mediumLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-orange-500 hover:text-orange-600 font-bold text-xl group transition-all duration-300 mt-4"
+                className={`inline-flex items-center gap-2 font-bold text-xl group transition-all duration-300 mt-4 ${
+                  project.title === 'RoastD' ? 'text-[#86102a]' : 'text-accent'
+                } hover:opacity-80`}
               >
                 Read the full breakdown on Medium
                 <span className="group-hover:translate-x-1 transition-transform">→</span>
@@ -168,9 +239,22 @@ export const ProjectDetail = () => {
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-orange-500 text-white rounded-full font-bold hover:bg-orange-600 transition-all duration-300 group"
+                className={`inline-flex items-center gap-2 px-8 py-4 text-white rounded-full font-bold transition-all duration-300 group ${
+                  project.title === 'RoastD' ? 'bg-[#86102a]' : 'bg-accent'
+                } hover:opacity-90`}
               >
-                Visit Live Site
+                {project.title === 'RoastD' ? 'RoastD by Claude Code' : 'Visit Live Site'}
+                <ExternalLink className="w-4 h-4" />
+              </a>
+            )}
+            {project.title === 'RoastD' && project.base44Link && (
+              <a 
+                href={project.base44Link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-[#86102a] text-white rounded-full font-bold hover:opacity-90 transition-all duration-300 group"
+              >
+                RoastD by Base44
                 <ExternalLink className="w-4 h-4" />
               </a>
             )}
@@ -203,6 +287,44 @@ export const ProjectDetail = () => {
         </motion.div>
       </div>
 
+      {project.video && (
+        <div className="mt-32">
+          <motion.div 
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start"
+          >
+            <div className="lg:col-span-8 rounded-[32px] overflow-hidden shadow-2xl bg-black aspect-video">
+              <iframe
+                src={project.video.url}
+                title="Project Walkthrough"
+                className="w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+            <div className="lg:col-span-4">
+              <h3 className="text-2xl font-bold mb-6 uppercase tracking-tighter">Walkthrough & Case Study</h3>
+              <div className="text-gray-600 leading-relaxed whitespace-pre-line space-y-4">
+                {project.video.description.split('\n\n').map((para, i) => {
+                  // Simple bold parser for **text** in video description
+                  const parts = para.split(/(\*\*.*?\*\*)/g);
+                  const renderedPara = parts.map((part, index) => {
+                    if (part.startsWith('**') && part.endsWith('**')) {
+                      return <strong key={index} className="font-bold text-ink">{part.slice(2, -2)}</strong>;
+                    }
+                    return part;
+                  });
+                  return <p key={i}>{renderedPara}</p>;
+                })}
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      )}
+
       {project.screenshots && project.screenshots.length > 0 && (
         <div className="mt-32">
           {/* First screenshot - Full width */}
@@ -223,9 +345,18 @@ export const ProjectDetail = () => {
             </div>
             <div className="lg:col-span-4">
               <h3 className="text-2xl font-bold mb-4 uppercase tracking-tighter">{project.screenshots[0].title}</h3>
-              <p className="text-gray-600 leading-relaxed">
-                {project.screenshots[0].description}
-              </p>
+              <div className="text-gray-600 leading-relaxed whitespace-pre-line space-y-4">
+                {project.screenshots[0].description.split('\n\n').map((para, i) => {
+                  const parts = para.split(/(\*\*.*?\*\*)/g);
+                  const renderedPara = parts.map((part, index) => {
+                    if (part.startsWith('**') && part.endsWith('**')) {
+                      return <strong key={index} className="font-bold text-ink">{part.slice(2, -2)}</strong>;
+                    }
+                    return part;
+                  });
+                  return <p key={i}>{renderedPara}</p>;
+                })}
+              </div>
             </div>
           </motion.div>
 
@@ -251,9 +382,18 @@ export const ProjectDetail = () => {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold mb-3 uppercase tracking-tighter">{screenshot.title}</h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">
-                      {screenshot.description}
-                    </p>
+                    <div className="text-sm text-gray-600 leading-relaxed whitespace-pre-line space-y-3">
+                      {screenshot.description.split('\n\n').map((para, i) => {
+                        const parts = para.split(/(\*\*.*?\*\*)/g);
+                        const renderedPara = parts.map((part, index) => {
+                          if (part.startsWith('**') && part.endsWith('**')) {
+                            return <strong key={index} className="font-bold text-ink">{part.slice(2, -2)}</strong>;
+                          }
+                          return part;
+                        });
+                        return <p key={i}>{renderedPara}</p>;
+                      })}
+                    </div>
                   </div>
                 </motion.div>
               ))}
@@ -279,9 +419,18 @@ export const ProjectDetail = () => {
               </div>
               <div className="lg:col-span-4 lg:order-1">
                 <h3 className="text-2xl font-bold mb-4 uppercase tracking-tighter">{project.screenshots[project.screenshots.length - 1].title}</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {project.screenshots[project.screenshots.length - 1].description}
-                </p>
+                <div className="text-gray-600 leading-relaxed whitespace-pre-line space-y-4">
+                  {project.screenshots[project.screenshots.length - 1].description.split('\n\n').map((para, i) => {
+                    const parts = para.split(/(\*\*.*?\*\*)/g);
+                    const renderedPara = parts.map((part, index) => {
+                      if (part.startsWith('**') && part.endsWith('**')) {
+                        return <strong key={index} className="font-bold text-ink">{part.slice(2, -2)}</strong>;
+                      }
+                      return part;
+                    });
+                    return <p key={i}>{renderedPara}</p>;
+                  })}
+                </div>
               </div>
             </motion.div>
           )}
