@@ -80,7 +80,7 @@ const projectData: Record<string, Project> = {
     mediumLink: "https://medium.com/@shanondsilva2135/i-built-the-same-ai-app-twice-once-with-an-ai-app-builder-once-from-my-terminal-4a4b73bc3967?postPublishedType=initial",
     image: 'https://i.ibb.co/wFhB6HFp/Screenshot-2026-04-03-181016.png',
     link: 'https://roastd-j9hjii4wf-shanondsilva2135-1177s-projects.vercel.app/',
-    base44Link: '#',
+    base44Link: 'https://roastd.base44.app/',
     sourceLink: 'https://github.com/Shanondsilva/RoastD',
     video: {
       url: "https://www.youtube.com/embed/eoDU5eSJ6z4",
