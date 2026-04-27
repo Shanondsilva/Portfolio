@@ -5,6 +5,7 @@ import { Hero } from './components/Hero';
 import { Services } from './components/Services';
 import { About } from './components/About';
 import { Portfolio } from './components/Portfolio';
+import { Certifications } from './components/Certifications';
 import { FAQ } from './components/FAQ';
 import { Contact, Footer } from './components/Contact';
 import { ProjectDetail } from './components/ProjectDetail';
@@ -31,6 +32,8 @@ const MainContent = () => {
       <About />
       
       <Portfolio />
+      
+      <Certifications />
       
       <FAQ />
       

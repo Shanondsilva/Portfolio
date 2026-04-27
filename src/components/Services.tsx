@@ -14,6 +14,18 @@ interface Service {
 const services: Service[] = [
   {
     id: '01',
+    title: 'AI System Architect\nTHE VOICES | Sep 2025 – Present',
+    description: 'System Architecture & Orchestration\nArchitected AMCOS (Adaptive Multi-Agent Context Orchestration System) powering TheVoices.world, coordinating text, blog, image, and structuring agents through a context-aware routing engine.\n\nScale & Engagement\nScaled platform to 1,200+ active users and 420K+ cumulative visits, with AI-driven interactions accounting for over 70% of total platform activity.\n\nPersistent Context Layer\nBuilt a persistent memory layer maintaining state across multi-step AI workflows, solving the stateless model problem common to AI integrations.\n\nEngineering Impact\n62% AI adoption among users, 38% lift in content output per session, and 35% reduction in feature integration time through a model-agnostic orchestration layer.',
+    skills: [
+      'AI Systems Architecture\nMulti-Agent AI Orchestration • AMCOS',
+      'Core AI Engineering\nLLM & Generative AI Integration • Context Memory',
+      'Scalable Infrastructure\nDistributed Systems • Backend Architecture',
+      'Product Growth\nUser Scaling • Data-Driven Platform Design'
+    ],
+    companyLink: 'https://thevoices.world/started'
+  },
+  {
+    id: '02',
     title: 'Lead AI Engineer\nZikora AI | July 2025 – Dec 2025',
     description: '2M+ Monthly Requests\nProduction AI platform processing millions of requests across distributed infrastructure.\n\n99.5% System Reliability\nHybrid cloud architecture deployed across AWS + Azure ensuring high availability and fault tolerance.\n\n40% Accuracy Improvement\nAdvanced reasoning architectures (CoT + ReAct) significantly improved autonomous task performance.\n\n60% Faster Deployments\nCI/CD architecture reduced release cycles and enabled stable continuous delivery.',
     skills: [
@@ -25,7 +37,7 @@ const services: Service[] = [
     companyLink: 'https://zikoraai.com/'
   },
   {
-    id: '02',
+    id: '03',
     title: 'Digital Marketing Executive\nPortugal Pathways | April 2025 – June 2025',
     description: '30+ Educational Articles Published\nResearched and produced visa-focused content that improved website dwell time by 17% and increased qualified lead generation by 24% through informative, SEO-aligned articles.\n\n68% Increase in Video Engagement\nRepurposed long-form footage into high-impact short-form reels, boosting average video views across Instagram and LinkedIn.\n\n15% Audience Growth\nExpanded digital reach through consistent content delivery and platform-specific optimisation strategies.\n\nHigher CTR Through A/B Testing\nTested content formats and headlines to improve click-through rates and conversion performance through data-driven experimentation.',
     skills: [
@@ -36,7 +48,7 @@ const services: Service[] = [
     companyLink: 'https://www.portugalpathways.io/'
   },
   {
-    id: '03',
+    id: '04',
     title: 'Marketing Intern\nMarkitect AI | Oct 2024 – Jan 2025',
     description: '40% Faster Client Targeting\nConducted AI-assisted and manual bio-data research, improving prospect segmentation and accelerating the client targeting process.\n\n100% On-Time Project Delivery\nManaged 5+ concurrent projects within a startup environment, maintaining performance under tight deadlines and ensuring consistent campaign delivery.\n\n25% More Efficient Campaign Execution\nFacilitated cross-team strategy meetings and introduced AI-driven marketing approaches, improving collaboration and campaign execution efficiency.',
     skills: [
