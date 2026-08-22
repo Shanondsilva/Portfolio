@@ -26,19 +26,19 @@ const services: Service[] = [
   },
   {
     id: '02',
-    title: 'Executive Assistant (Contract)\nZikora AI | July 2025 – Dec 2025',
-    description: '2M+ Monthly Requests\nProduction AI platform processing millions of requests across distributed infrastructure.\n\n99.5% System Reliability\nHybrid cloud architecture deployed across AWS + Azure ensuring high availability and fault tolerance.\n\n40% Accuracy Improvement\nAdvanced reasoning architectures (CoT + ReAct) significantly improved autonomous task performance.\n\n60% Faster Deployments\nCI/CD architecture reduced release cycles and enabled stable continuous delivery.',
+    title: 'Executive Assistant (Contract)\nPsychological Consultancy Ltd (PCL) | Aug 2026 – Present',
+    description: 'Operations & Coordination\nCoordinate concurrent marketing, research and administrative workstreams while maintaining priorities and follow-up.\n\nInformation Organisation\nRestructured 30+ working folders and documents in SharePoint, improving version organisation and separating current files from superseded material.\n\nStakeholder Management\nConsolidated staff, contractors, clients and external partners into a central stakeholder tracker to improve contact management and follow-up.\n\nWorkflow & Research Support\nSupport ongoing research, marketing and administrative activity by organising information, tracking actions and maintaining follow-up across active workstreams.',
     skills: [
-      'Infrastructure\nAWS • Azure • Kubernetes • Docker',
-      'Backend Systems\nFastAPI • Python • Celery • Redis',
-      'Observability & ML Ops\nPrometheus • Grafana • MLflow',
-      'AI Architecture\nMulti-Agent Systems • Chain-of-Thought Reasoning • ReAct Prompting'
+      'Operations & Administration\nWorkflow Coordination • Task Prioritisation • Follow-up Management',
+      'Document & Information Management\nSharePoint • File Organisation • Version Control',
+      'Stakeholder Coordination\nContact Management • Stakeholder Tracking • Professional Communication',
+      'Research & Business Support\nResearch Coordination • Information Organisation • Administrative Support'
     ],
     companyLink: 'https://zikoraai.com/'
   },
   {
     id: '03',
-    title: 'Digital Marketing Executive\nPortugal Pathways | April 2025 – June 2025',
+    title: 'Digital Marketing Executive\nPortugal Pathways | Feb 2025 – June 2025',
     description: '30+ Educational Articles Published\nResearched and produced visa-focused content that improved website dwell time by 17% and increased qualified lead generation by 24% through informative, SEO-aligned articles.\n\n68% Increase in Video Engagement\nRepurposed long-form footage into high-impact short-form reels, boosting average video views across Instagram and LinkedIn.\n\n15% Audience Growth\nExpanded digital reach through consistent content delivery and platform-specific optimisation strategies.\n\nHigher CTR Through A/B Testing\nTested content formats and headlines to improve click-through rates and conversion performance through data-driven experimentation.',
     skills: [
       'Core Skills\nContent Strategy • SEO Writing • Social Media Growth Strategy',
