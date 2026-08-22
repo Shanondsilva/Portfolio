@@ -14,19 +14,19 @@ interface Service {
 const services: Service[] = [
   {
     id: '01',
-    title: 'AI System Architect\nTHE VOICES | Sep 2025 – Present',
-    description: 'System Architecture & Orchestration\nArchitected AMCOS (Adaptive Multi-Agent Context Orchestration System) powering TheVoices.world, coordinating text, blog, image, and structuring agents through a context-aware routing engine.\n\nScale & Engagement\nScaled platform to 1,200+ active users and 420K+ cumulative visits, with AI-driven interactions accounting for over 70% of total platform activity.\n\nPersistent Context Layer\nBuilt a persistent memory layer maintaining state across multi-step AI workflows, solving the stateless model problem common to AI integrations.\n\nEngineering Impact\n62% AI adoption among users, 38% lift in content output per session, and 35% reduction in feature integration time through a model-agnostic orchestration layer.',
+    title: 'Founder & Product Lead\nImpulsive (IMPULSIVE LTD) | Apr 2026 – Present',
+    description: 'Built & Launched\nBuilt and launched Impulsive, a privacy-first Android product, as sole developer, owning product requirements, architecture, implementation, testing and Google Play release.\n\nFull Product Ownership\nTook the product from concept to launch across Kotlin and Jetpack Compose, while also owning release management, pricing, user validation and product direction.\n\nProduct Engineering\nEngineered the core experience including Moment Plans, adaptive release behaviour and privacy-focused local data handling.\n\nEarly Validation\nGenerated the first 23 acquisitions organically and converted 3 into paying subscribers during the first week after launch.',
     skills: [
-      'AI Systems Architecture\nMulti-Agent AI Orchestration • AMCOS',
-      'Core AI Engineering\nLLM & Generative AI Integration • Context Memory',
-      'Scalable Infrastructure\nDistributed Systems • Backend Architecture',
-      'Product Growth\nUser Scaling • Data-Driven Platform Design'
+      'Android Development\nKotlin • Jetpack Compose • MVVM',
+      'Product Engineering\nArchitecture • Release Management • Testing',
+      'Data & Privacy\nRoom • SQLCipher • DataStore',
+      'Product & Commercial\nUser Validation • Pricing • Google Play • ASO'
     ],
     companyLink: 'https://thevoices.world/started'
   },
   {
     id: '02',
-    title: 'Lead AI Engineer\nZikora AI | July 2025 – Dec 2025',
+    title: 'Executive Assistant (Contract)\nZikora AI | July 2025 – Dec 2025',
     description: '2M+ Monthly Requests\nProduction AI platform processing millions of requests across distributed infrastructure.\n\n99.5% System Reliability\nHybrid cloud architecture deployed across AWS + Azure ensuring high availability and fault tolerance.\n\n40% Accuracy Improvement\nAdvanced reasoning architectures (CoT + ReAct) significantly improved autonomous task performance.\n\n60% Faster Deployments\nCI/CD architecture reduced release cycles and enabled stable continuous delivery.',
     skills: [
       'Infrastructure\nAWS • Azure • Kubernetes • Docker',
