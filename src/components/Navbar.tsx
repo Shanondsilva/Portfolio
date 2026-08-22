@@ -27,9 +27,8 @@ export const Navbar = () => {
     { name: 'EXPERIENCE', to: '/#experience' },
     { name: 'ABOUT', to: '/#about' },
     { name: 'PROJECTS', to: '/#projects' },
-    { name: 'CERTIFICATIONS', to: '/#certifications' },
+    { name: 'EDUCATION & CERTIFICATIONS', to: '/#certifications' },
     { name: 'Q&A', to: '/#faq' },
-    { name: 'CONTACT', to: '/#contact' },
   ];
 
   return (
@@ -41,7 +40,7 @@ export const Navbar = () => {
         <div className="flex items-center gap-8">
           <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity" onClick={() => setIsMobileMenuOpen(false)}>
             <img 
-              src="https://i.ibb.co/sdKN78f6/Gemini-Generated-Image-bvjdvibvjdvibvjd.png" 
+              src="/favicon.png" 
               alt="Logo" 
               className="w-8 h-8 rounded-lg object-cover"
               referrerPolicy="no-referrer"
@@ -68,7 +67,12 @@ export const Navbar = () => {
 
         <div className="flex items-center gap-4">
           <div className="hidden sm:flex items-center gap-2 mr-2">
-            <a href="mailto:shanondsilva2135@gmail.com" className={cn("p-2 transition-colors", isRoastDPage ? "hover:text-[#86102a]" : "hover:text-accent")}>
+            <a 
+              href="mailto:Shanondsilva2135@gmail.com?subject=Portfolio%20Enquiry" 
+              aria-label="Email Shanon Dsilva"
+              title="Email Shanon Dsilva"
+              className={cn("p-2 transition-colors", isRoastDPage ? "hover:text-[#86102a]" : "hover:text-accent")}
+            >
               <Mail className="w-4 h-4" />
             </a>
             <a href="https://github.com/Shanondsilva" target="_blank" rel="noopener noreferrer" className={cn("p-2 transition-colors", isRoastDPage ? "hover:text-[#86102a]" : "hover:text-accent")}>
@@ -128,7 +132,12 @@ export const Navbar = () => {
               <div className="h-[1px] bg-ink/10 my-2" />
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-4">
-                  <a href="mailto:shanondsilva2135@gmail.com" className={cn("p-2 bg-ink/5 rounded-full transition-colors", isRoastDPage ? "hover:text-[#86102a]" : "hover:text-accent")}>
+                  <a 
+                    href="mailto:Shanondsilva2135@gmail.com?subject=Portfolio%20Enquiry" 
+                    aria-label="Email Shanon Dsilva"
+                    title="Email Shanon Dsilva"
+                    className={cn("p-2 bg-ink/5 rounded-full transition-colors", isRoastDPage ? "hover:text-[#86102a]" : "hover:text-accent")}
+                  >
                     <Mail className="w-5 h-5" />
                   </a>
                   <a href="https://github.com/Shanondsilva" target="_blank" rel="noopener noreferrer" className={cn("p-2 bg-ink/5 rounded-full transition-colors", isRoastDPage ? "hover:text-[#86102a]" : "hover:text-accent")}>
@@ -143,7 +152,7 @@ export const Navbar = () => {
                   to="/#contact" 
                   scroll={scrollWithOffset}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="px-6 py-3 bg-ink text-white rounded-full text-xs font-bold uppercase tracking-widest"
+                  className="px-6 py-3 bg-ink text-white rounded-full text-xs font-bold uppercase tracking-widest text-center"
                 >
                   Let's Talk
                 </HashLink>

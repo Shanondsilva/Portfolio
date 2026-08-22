@@ -20,12 +20,12 @@ export const Hero = () => {
               transition={{ duration: 0.8 }}
             >
               <div className="flex items-center gap-2 mb-6">
-                <span className="text-lg">Hi 👋 I'm Shanon Dsilva</span>
+                <span className="text-lg">Hi, I’m Shanon Dsilva</span>
               </div>
               <h2 className="text-5xl md:text-8xl font-bold tracking-tighter leading-[0.9] mb-8 uppercase">
-                AI SYSTEMS,<br />
-                EDGE COMPUTING<br />
-                & DEPLOYMENT.
+                FULL-STACK<br />
+                PRODUCT<br />
+                ENGINEER.
               </h2>
             </motion.div>
           </div>
@@ -56,14 +56,14 @@ export const Hero = () => {
                 transition={{ duration: 4, repeat: Infinity }}
                 className="absolute -top-4 -left-4 z-20 px-6 py-2 bg-ink text-white rounded-full font-bold text-sm shadow-xl rotate-[-10deg]"
               >
-                Strategist
+                Founder
               </motion.div>
               <motion.div 
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 5, repeat: Infinity, delay: 1 }}
                 className="absolute top-12 -right-8 z-20 px-6 py-2 bg-ink text-white rounded-full font-bold text-sm shadow-xl rotate-[15deg]"
               >
-                AI Engineer
+                Product Engineer
               </motion.div>
             </motion.div>
           </div>
@@ -72,7 +72,7 @@ export const Hero = () => {
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-end">
           <div className="glass p-8 rounded-3xl max-w-sm">
             <p className="text-lg font-medium leading-relaxed mb-6">
-              Specializing in High-Performance AI Systems and Edge Computing Solutions.
+              I build and ship products across Android, web and applied AI, from architecture and code to launch.
             </p>
             <div className="flex items-center justify-between">
               <a href="mailto:Shanondsilva2135@gmail.com" className="font-bold underline underline-offset-4">Shanondsilva2135@gmail.com</a>
