@@ -38,11 +38,11 @@ export const Navbar = () => {
     )}>
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center gap-8">
-          <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity" onClick={() => setIsMobileMenuOpen(false)}>
+          <Link to="/" className="flex items-center hover:opacity-80 transition-opacity" onClick={() => setIsMobileMenuOpen(false)}>
             <img 
-              src="/favicon.png" 
+              src="https://i.ibb.co/23fCNhpd/s.png" 
               alt="Logo" 
-              className="w-8 h-8 rounded-lg object-cover"
+              className="h-9 w-auto object-contain"
               referrerPolicy="no-referrer"
             />
           </Link>
@@ -82,17 +82,15 @@ export const Navbar = () => {
               <Linkedin className="w-4 h-4" />
             </a>
           </div>
-          <HashLink 
-            smooth 
-            to="/#contact" 
-            scroll={scrollWithOffset}
+          <a 
+            href="mailto:Shanondsilva2135@gmail.com?subject=Portfolio%20Enquiry"
             className={cn(
               "hidden sm:block px-6 py-2 bg-ink text-white rounded-full text-xs font-bold uppercase tracking-widest transition-colors",
               isRoastDPage ? "hover:bg-[#86102a]" : "hover:bg-accent"
             )}
           >
             Let's Talk
-          </HashLink>
+          </a>
           
           <button 
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -147,15 +145,13 @@ export const Navbar = () => {
                     <Linkedin className="w-5 h-5" />
                   </a>
                 </div>
-                <HashLink 
-                  smooth 
-                  to="/#contact" 
-                  scroll={scrollWithOffset}
+                <a 
+                  href="mailto:Shanondsilva2135@gmail.com?subject=Portfolio%20Enquiry"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="px-6 py-3 bg-ink text-white rounded-full text-xs font-bold uppercase tracking-widest text-center"
                 >
                   Let's Talk
-                </HashLink>
+                </a>
               </div>
             </div>
           </motion.div>

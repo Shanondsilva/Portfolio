@@ -22,7 +22,7 @@ const services: Service[] = [
       'Data & Privacy\nRoom • SQLCipher • DataStore',
       'Product & Commercial\nUser Validation • Pricing • Google Play • ASO'
     ],
-    companyLink: 'https://thevoices.world/started'
+    companyLink: 'https://useimpulsive.com/'
   },
   {
     id: '02',
@@ -34,7 +34,7 @@ const services: Service[] = [
       'Stakeholder Coordination\nContact Management • Stakeholder Tracking • Professional Communication',
       'Research & Business Support\nResearch Coordination • Information Organisation • Administrative Support'
     ],
-    companyLink: 'https://zikoraai.com/'
+    companyLink: 'https://www.psychological-consultancy.com/'
   },
   {
     id: '03',

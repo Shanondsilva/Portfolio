@@ -11,19 +11,21 @@ export const About = () => {
       
       <div className="text-center max-w-4xl mx-auto mb-20">
         <h2 className="text-4xl md:text-5xl font-bold tracking-tighter leading-tight">
-          I build AI that doesn’t just respond, but acts. My focus is on moving beyond simple prompts to engineer agentic workflows and multi-modal systems that actually scale in production. I bridge the gap between "COOL DEMO" and "RELIABLE SYSTEM."
+          Full-stack product engineer and founder with experience delivering Android, web and applied AI products from concept through production. My work spans product definition, system architecture, implementation, testing and release, with a focus on privacy-conscious engineering, reliable user experiences and practical product delivery.
+          <br /><br />
+          I combine hands-on technical development with product and commercial decision-making, allowing me to approach software not only as an engineering problem, but as a product that must solve a genuine user need, perform reliably and succeed beyond development.
         </h2>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
         <div className="flex lg:flex-col justify-around lg:justify-start lg:space-y-16">
           <div>
-            <div className="text-5xl md:text-6xl font-bold tracking-tighter mb-2">2+</div>
-            <div className="text-[10px] md:text-sm font-medium text-gray-500 uppercase tracking-widest">Years of Experience</div>
+            <div className="text-5xl md:text-6xl font-bold tracking-tighter mb-2">1</div>
+            <div className="text-[10px] md:text-sm font-medium text-gray-500 uppercase tracking-widest">Product Launched</div>
           </div>
           <div>
-            <div className="text-5xl md:text-6xl font-bold tracking-tighter mb-2">3+</div>
-            <div className="text-[10px] md:text-sm font-medium text-gray-500 uppercase tracking-widest">Total Projects</div>
+            <div className="text-5xl md:text-6xl font-bold tracking-tighter mb-2">4+</div>
+            <div className="text-[10px] md:text-sm font-medium text-gray-500 uppercase tracking-widest">Products & Projects</div>
           </div>
         </div>
 
