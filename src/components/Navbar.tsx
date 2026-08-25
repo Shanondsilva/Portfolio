@@ -82,15 +82,17 @@ export const Navbar = () => {
               <Linkedin className="w-4 h-4" />
             </a>
           </div>
-          <a 
-            href="mailto:Shanondsilva2135@gmail.com?subject=Portfolio%20Enquiry"
+          <HashLink 
+            smooth
+            to="/#contact"
+            scroll={scrollWithOffset}
             className={cn(
               "hidden sm:block px-6 py-2 bg-ink text-white rounded-full text-xs font-bold uppercase tracking-widest transition-colors",
               isRoastDPage ? "hover:bg-[#86102a]" : "hover:bg-accent"
             )}
           >
             Let's Talk
-          </a>
+          </HashLink>
           
           <button 
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -145,13 +147,15 @@ export const Navbar = () => {
                     <Linkedin className="w-5 h-5" />
                   </a>
                 </div>
-                <a 
-                  href="mailto:Shanondsilva2135@gmail.com?subject=Portfolio%20Enquiry"
+                <HashLink 
+                  smooth
+                  to="/#contact"
+                  scroll={scrollWithOffset}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="px-6 py-3 bg-ink text-white rounded-full text-xs font-bold uppercase tracking-widest text-center"
                 >
                   Let's Talk
-                </a>
+                </HashLink>
               </div>
             </div>
           </motion.div>

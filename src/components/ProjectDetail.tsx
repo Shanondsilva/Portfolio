@@ -27,7 +27,7 @@ interface Project {
 }
 
 const projectData: Record<string, Project> = {
-  '001': {
+  '003': {
     title: 'MesaQ',
     tagline: 'Your meal. Your queue.',
     category: 'MesaQ',
@@ -65,7 +65,7 @@ const projectData: Record<string, Project> = {
       }
     ]
   },
-  '002': {
+  '004': {
     title: 'RoastD',
     tagline: 'Paste it. Pick your poison. Get roasted.',
     category: 'RoastD',
@@ -98,38 +98,6 @@ const projectData: Record<string, Project> = {
         description: "**Left:** **Base44's** generated results page with clarity, impact, and originality scores, plus thumbs up/down feedback on each tip. Clean layout, **zero custom code**.\n\n**Right:** Typewriter quote that types out character by character, animated heat score bar with a blue-to-yellow-to-red gradient, and perspective cards that expand from thin coloured lines. Six custom animations, all **pure CSS and vanilla JS**."
       }
     ]
-  },
-  '003': {
-    title: 'The Duct',
-    tagline: 'Custom Font Engineering',
-    category: 'Font Design',
-    description: [
-      "The Duct is a custom-engineered typeface designed for high legibility and technical precision in industrial environments.",
-      "Every glyph was meticulously crafted to ensure clarity at small sizes and under challenging lighting conditions.",
-      "Developed using FontForge and Glyphs, this project involved extensive testing across various digital and physical mediums."
-    ],
-    techStack: ["FontForge", "Glyphs", "Type Design", "SVG"],
-    mediumLink: "",
-    image: 'https://picsum.photos/seed/duct/800/600',
-    link: '#',
-    sourceLink: '#',
-    screenshots: []
-  },
-  '004': {
-    title: 'iPhone 16 Pro',
-    tagline: 'Next-Gen Application Interface',
-    category: 'Application',
-    description: [
-      "A conceptual application interface designed specifically for the iPhone 16 Pro, leveraging advanced hardware capabilities.",
-      "The UI focuses on fluid transitions and intuitive gestures, providing a seamless user experience that feels native to the device.",
-      "Built with React Native and Framer Motion, this prototype explores the future of mobile interaction design."
-    ],
-    techStack: ["React Native", "Framer Motion", "TypeScript", "UI/UX"],
-    mediumLink: "",
-    image: 'https://picsum.photos/seed/iphone/800/600',
-    link: '#',
-    sourceLink: '#',
-    screenshots: []
   }
 };
 
