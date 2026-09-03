@@ -6,44 +6,18 @@ import { cn } from '../lib/utils';
 const faqs = [
   {
     question: "MORE ABOUT ME?",
-    answer: "I’m an AI Engineer who thrives on turning \"impossible\" data into autonomous, high-performing systems. From orchestrating agentic workflows for millions of users to hitting sub-450ms inference times, I build infrastructure that stays reliable under pressure. I believe the best AI doesn't just process information it solves real-world problems with precision and a bit of engineering grit."
+    answer: "I build products across Android, web and applied AI, combining hands-on engineering with product thinking from initial requirements through implementation, testing and release."
   },
   {
-    question: "HOW CAN I CONTACT WITH YOU?",
+    question: "WHAT KIND OF WORK DO YOU BUILD?",
+    answer: "I focus on end-to-end product development, building Android applications, web products, and applied AI features."
+  },
+  {
+    question: "HOW CAN I CONTACT YOU?",
     answer: (
       <>
-        I’m always open to discussing new projects, technical challenges, or the future of agentic workflows. The best way to reach me is via <a href="mailto:Shanondsilva2135@gmail.com" className="text-accent hover:underline">Email</a> or by connecting with me on <a href="https://www.linkedin.com/in/shanondsilva/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">LinkedIn</a>. I usually get back to people within 24 hours.
+        The best way to reach me is via <a href="mailto:Shanondsilva2135@gmail.com" className="text-accent hover:underline">Email</a> or by connecting with me on <a href="https://www.linkedin.com/in/shanondsilva/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">LinkedIn</a>.
       </>
-    )
-  },
-  {
-    question: "HOW MUCH YOUR COST?",
-    answer: "Pricing varies depending on the scope and complexity of the project. I offer both fixed-price and hourly rates. Let's discuss your project to get a more accurate estimate."
-  },
-  {
-    question: "WHICH TYPE OF SERVICES YOU PROVIDE?",
-    answer: (
-      <div className="space-y-4">
-        <p>I provide end-to-end AI engineering services focused on high-performance infrastructure and agentic design:</p>
-        <ul className="space-y-4">
-          <li>
-            <strong className="block text-ink font-bold uppercase text-xs tracking-widest mb-1">Agentic AI Orchestration</strong>
-            <p>I design autonomous, multi-agent workflows that automate complex data tasks with precision.</p>
-          </li>
-          <li>
-            <strong className="block text-ink font-bold uppercase text-xs tracking-widest mb-1">Scalable Infrastructure</strong>
-            <p>I build high-density, fault-tolerant backend systems (FastAPI/Kubernetes) that handle millions of requests.</p>
-          </li>
-          <li>
-            <strong className="block text-ink font-bold uppercase text-xs tracking-widest mb-1">Real-Time Performance</strong>
-            <p>I optimize AI models for sub-450ms inference, ensuring lightning-fast, production-ready security and detection.</p>
-          </li>
-          <li>
-            <strong className="block text-ink font-bold uppercase text-xs tracking-widest mb-1">Growth-Focused Engineering</strong>
-            <p>I bridge the gap between deep-tech and market strategy to build AI products that drive actual business results.</p>
-          </li>
-        </ul>
-      </div>
     )
   }
 ];

@@ -1,40 +1,13 @@
 import React from 'react';
 import { motion } from 'motion/react';
 
-const certifications = [
-  {
-    id: '01',
-    title: 'TensorFlow Developer Certificate',
-    issuer: 'TensorFlow',
-    date: 'Issued Jan 2024 · Expires Jan 2027',
-    description: 'Earned the official TensorFlow Developer Certificate from Google, validating hands-on proficiency in building and training machine learning and deep learning models using TensorFlow. The certification covers computer vision with CNNs, natural language processing, time series forecasting, and real-world model deployment demonstrating the ability to solve practical ML problems end-to-end.',
-    skills: ['TensorFlow', 'Deep Learning', 'Convolutional Neural Networks (CNNs)', 'Natural Language Processing (NLP)', 'Time Series Forecasting'],
-    image: 'https://i.ibb.co/BD3W183/Your-paragraph-text.png',
-    link: '#'
-  },
-  {
-    id: '02',
-    title: 'AWS Certified DevOps Engineer – Professional',
-    issuer: 'Amazon Web Services',
-    date: 'Issued Jun 2024 · Expires Jun 2026',
-    description: 'Achieved the AWS Certified DevOps Engineer – Professional certification, one of AWS\'s most advanced credentials. Validates expertise in implementing and managing continuous delivery systems on AWS, automating security controls, governance, and compliance, and designing resilient, self-healing systems at scale. Demonstrates deep fluency in monitoring, logging, and incident response across complex cloud environments.',
-    skills: ["Amazon Web Services (AWS)", "CI/CD Pipelines", "Infrastructure as Code (Terraform / CloudFormation)", "Site Reliability Engineering", "Monitoring & Incident Response"],
-    image: 'https://i.ibb.co/XxrFYCKC/Shanon-Dsilva.png',
-    link: '#'
-  },
-  {
-    id: '03',
-    title: 'Google Cloud Professional Machine Learning Engineer',
-    issuer: 'Google Cloud',
-    date: 'Issued May 2023 · Expires May 2025',
-    description: 'Google-certified professional skilled in designing, building, and deploying machine learning models on Google Cloud Platform (GCP). This certification demonstrates advanced expertise in translating business challenges into ML solutions using tools like Vertex AI, TensorFlow, and BigQuery ML. It validates proficiency in data engineering, model optimisation, scalability, and governance ensuring that ML workflows align with enterprise performance and compliance standards.',
-    skills: ['End-to-End ML System Design', 'Data Engineering for ML', 'Model Development & Optimisation', 'Operationalising ML Models (MLOps)', 'Model evaluation', 'NLP fundamentals', 'Feature Engineering'],
-    image: 'https://i.ibb.co/bjDHTv4D/GCP.png',
-    link: '#'
-  }
-];
+const certifications: any[] = [];
 
 export const Certifications = () => {
+  if (certifications.length === 0) {
+    return null;
+  }
+
   return (
     <section id="certifications" className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">

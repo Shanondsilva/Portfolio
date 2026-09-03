@@ -13,7 +13,7 @@ interface Project {
   image: string;
   link: string;
   base44Link?: string;
-  sourceLink: string;
+  sourceLink?: string;
   video?: {
     url: string;
     description: string;
@@ -27,6 +27,22 @@ interface Project {
 }
 
 const projectData: Record<string, Project> = {
+  '001': {
+    title: 'Impulsive',
+    tagline: 'Different moments need different kinds of support.',
+    category: 'Android Product',
+    description: [
+      "Impulsive started from a simple observation: the same person can open the same app for completely different reasons. At one moment the action may be completely intentional. At another, the same action can happen almost automatically. I became interested in whether support could respond differently to those moments instead of applying the same restriction every time.",
+      "That thinking shaped features such as Moment Plans, Familiar Steps and protected periods. A Moment Plan lets someone prepare a small preferred action before a difficult moment arrives. Familiar Steps can bring back actions that have previously been useful rather than constantly introducing new advice. The underlying principle is that Impulsive can support a decision without taking ownership of it.",
+      "I built Impulsive as an Android product using Kotlin and Jetpack Compose, taking it from product definition and architecture through implementation, testing and release. As the product became more flexible, Android state and lifecycle behaviour became part of the product problem itself.",
+      "Impulsive was then released through Google Play. Moving from testing something on my own device to putting it in front of real users changed how I evaluated the product. Small transitions, timing decisions and state behaviour that looked like engineering details could materially change the experience."
+    ],
+    techStack: ["Kotlin", "Jetpack Compose", "MVVM", "Room", "SQLCipher", "DataStore", "Google Play"],
+    mediumLink: "https://medium.com/@shanondsilva2135/at-1pm-opening-the-app-was-fine-at-11-47pm-it-was-different-daad2daa7258",
+    image: 'https://images.unsplash.com/photo-1607252656733-fd7420c2420a?w=800&q=80',
+    link: 'https://useimpulsive.com/',
+    screenshots: []
+  },
   '003': {
     title: 'MesaQ',
     tagline: 'Your meal. Your queue.',
@@ -104,6 +120,7 @@ const projectData: Record<string, Project> = {
 export const ProjectDetail = () => {
   const { id } = useParams();
   const project = projectData[id as keyof typeof projectData];
+  const prefersReducedMotion = typeof window !== 'undefined' ? window.matchMedia('(prefers-reduced-motion: reduce)').matches : false;
 
   if (!project) {
     return (
@@ -119,27 +136,53 @@ export const ProjectDetail = () => {
   }
 
   return (
-    <div className="pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto">
-      <Link to="/" className="inline-flex items-center gap-2 text-gray-500 hover:text-ink transition-colors mb-12 uppercase text-xs font-bold tracking-widest">
-        <ArrowLeft className="w-4 h-4" /> Back to Portfolio
-      </Link>
+    <div className={`min-h-screen relative overflow-hidden ${project.title === 'Impulsive' ? 'bg-[#FFFDF8] text-[#2D2730]' : 'bg-white text-ink'}`}>
+      {project.title === 'Impulsive' && (
+        <div className="fixed inset-0 pointer-events-none overflow-hidden flex justify-center items-center z-0">
+          <motion.div 
+            animate={prefersReducedMotion ? {} : { x: [0, 30, -20, 0], y: [0, -40, 20, 0] }}
+            transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+            className="absolute top-[-10%] left-[-10%] w-[60vw] h-[60vw] rounded-full bg-[#D0C3F1] opacity-50 blur-[100px]"
+          />
+          <motion.div 
+            animate={prefersReducedMotion ? {} : { x: [0, -40, 20, 0], y: [0, 30, -20, 0] }}
+            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+            className="absolute top-[10%] right-[-20%] w-[55vw] h-[55vw] rounded-full bg-[#BDE0FE] opacity-40 blur-[100px]"
+          />
+          <motion.div 
+            animate={prefersReducedMotion ? {} : { x: [0, 20, -30, 0], y: [0, 40, -10, 0] }}
+            transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
+            className="absolute bottom-[-20%] left-[10%] w-[70vw] h-[70vw] rounded-full bg-[#FEF1AB] opacity-40 blur-[120px]"
+          />
+        </div>
+      )}
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="mb-4">
-            <span className={`text-xs font-bold tracking-widest uppercase ${project.title === 'RoastD' ? 'text-[#86102a]' : 'text-accent'}`}>{project.category}</span>
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tighter uppercase mt-2">
-              {project.title}
-            </h1>
-          </div>
-          
-          <h2 className="text-3xl md:text-4xl font-serif italic text-gray-400 mb-8 leading-tight">
-            {project.tagline}
-          </h2>
+      <div className="pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto relative z-10">
+        <Link to="/" className={`inline-flex items-center gap-2 transition-colors mb-12 uppercase text-xs font-bold tracking-widest ${project.title === 'Impulsive' ? 'text-[#2D2730]/60 hover:text-[#2D2730]' : 'text-gray-500 hover:text-ink'}`}>
+          <ArrowLeft className="w-4 h-4" /> Back to Portfolio
+        </Link>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="mb-4">
+              <span className={`text-xs font-bold tracking-widest uppercase ${project.title === 'RoastD' ? 'text-[#86102a]' : project.title === 'Impulsive' ? 'text-[#2D2730] bg-[#D0C3F1]/40 px-3 py-1 rounded-full' : 'text-accent'}`}>
+                {project.category}
+              </span>
+              <h1 className={`text-5xl md:text-7xl font-bold tracking-tighter uppercase mt-4 ${project.title === 'Impulsive' ? 'text-[#2D2730]' : ''}`}>
+                {project.title}
+              </h1>
+              {project.title === 'Impulsive' && (
+                <div className="h-1.5 w-24 bg-gradient-to-r from-[#D0C3F1] via-[#BDE0FE] to-[#FEF1AB] mt-6 rounded-full"></div>
+              )}
+            </div>
+            
+            <h2 className={`text-3xl md:text-4xl font-serif italic mb-8 leading-tight ${project.title === 'Impulsive' ? 'text-[#2D2730]/80' : 'text-gray-400'}`}>
+              {project.tagline}
+            </h2>
           
           <div className="space-y-8 mb-12">
             {project.description.map((para, i) => {
@@ -153,7 +196,7 @@ export const ProjectDetail = () => {
                   return (
                     <strong 
                       key={index} 
-                      className="font-bold text-ink"
+                      className={`font-bold ${project.title === 'Impulsive' ? 'text-[#2D2730]' : 'text-ink'}`}
                     >
                       {part.slice(2, -2)}
                     </strong>
@@ -167,8 +210,8 @@ export const ProjectDetail = () => {
                   key={i} 
                   className={`text-lg leading-relaxed ${
                     isHeading 
-                      ? "text-3xl font-bold text-ink mb-2 mt-8 first:mt-0" 
-                      : "text-gray-600"
+                      ? `text-3xl font-bold mb-2 mt-8 first:mt-0 ${project.title === 'Impulsive' ? 'text-[#2D2730]' : 'text-ink'}` 
+                      : `${project.title === 'Impulsive' ? 'text-[#2D2730]/80 font-medium' : 'text-gray-600'}`
                   }`}
                 >
                   {renderedPara}
@@ -180,25 +223,36 @@ export const ProjectDetail = () => {
                 href={project.mediumLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`inline-flex items-center gap-2 font-bold text-xl group transition-all duration-300 mt-4 ${
-                  project.title === 'RoastD' ? 'text-[#86102a]' : 'text-accent'
-                } hover:opacity-80`}
+                className={`inline-flex items-center gap-2 font-bold text-xl group transition-all duration-300 mt-4 relative ${
+                  project.title === 'RoastD' ? 'text-[#86102a] hover:opacity-80' : project.title === 'Impulsive' ? 'text-[#2D2730] hover:opacity-70' : 'text-accent hover:opacity-80'
+                }`}
               >
                 Read the full breakdown on Medium
-                <span className="group-hover:translate-x-1 transition-transform">→</span>
+                <span className="group-hover:translate-x-1 transition-transform z-10">→</span>
+                {project.title === 'Impulsive' && (
+                  <span className="absolute bottom-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#D0C3F1] via-[#BDE0FE] to-[#FEF1AB] rounded-full opacity-60 group-hover:opacity-100 transition-opacity -z-0"></span>
+                )}
               </a>
             )}
           </div>
 
           <div className="flex flex-wrap gap-2 mb-12">
-            {project.techStack.map((tech) => (
-              <span 
-                key={tech}
-                className="px-4 py-1.5 bg-ink text-white text-[10px] font-bold uppercase tracking-widest rounded-full"
-              >
-                {tech}
-              </span>
-            ))}
+            {project.techStack.map((tech, i) => {
+              let chipClass = "px-4 py-1.5 bg-ink text-white text-[10px] font-bold uppercase tracking-widest rounded-full";
+              if (project.title === 'Impulsive') {
+                if (i % 3 === 0) chipClass = "px-4 py-1.5 bg-[#D0C3F1] text-black text-[10px] font-bold uppercase tracking-widest rounded-full shadow-sm";
+                else if (i % 3 === 1) chipClass = "px-4 py-1.5 bg-[#BDE0FE] text-black text-[10px] font-bold uppercase tracking-widest rounded-full shadow-sm";
+                else chipClass = "px-4 py-1.5 bg-[#FEF1AB] text-black text-[10px] font-bold uppercase tracking-widest rounded-full shadow-sm";
+              }
+              return (
+                <span 
+                  key={tech}
+                  className={chipClass}
+                >
+                  {tech}
+                </span>
+              );
+            })}
           </div>
           
           <div className="flex flex-wrap gap-4">
@@ -207,11 +261,11 @@ export const ProjectDetail = () => {
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`inline-flex items-center gap-2 px-8 py-4 text-white rounded-full font-bold transition-all duration-300 group ${
-                  project.title === 'RoastD' ? 'bg-[#86102a]' : 'bg-accent'
-                } hover:opacity-90`}
+                className={`inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold transition-all duration-300 group ${
+                  project.title === 'RoastD' ? 'bg-[#86102a] text-white hover:opacity-90' : project.title === 'Impulsive' ? 'bg-gradient-to-r from-[#D0C3F1] via-[#BDE0FE] to-[#FEF1AB] text-[#2D2730] hover:saturate-150 hover:-translate-y-0.5 shadow-sm hover:shadow-md' : 'bg-accent text-white hover:opacity-90'
+                }`}
               >
-                {project.title === 'RoastD' ? 'RoastD by Claude Code' : 'Visit Live Site'}
+                {project.title === 'RoastD' ? 'RoastD by Claude Code' : project.title === 'Impulsive' ? 'Visit Impulsive' : 'Visit Live Site'}
                 <ExternalLink className="w-4 h-4" />
               </a>
             )}
@@ -244,12 +298,12 @@ export const ProjectDetail = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="rounded-[40px] overflow-hidden shadow-2xl sticky top-32"
+          className={`overflow-hidden shadow-2xl sticky top-32 ${project.title === 'Impulsive' ? 'rounded-[40px] bg-white/40 backdrop-blur-md p-3 ring-1 ring-white/60 shadow-xl' : 'rounded-[40px]'}`}
         >
           <img 
             src={project.image} 
             alt={project.title}
-            className="w-full h-auto object-cover"
+            className={`w-full h-auto object-cover ${project.title === 'Impulsive' ? 'rounded-[32px]' : ''}`}
             referrerPolicy="no-referrer"
           />
         </motion.div>
@@ -281,11 +335,11 @@ export const ProjectDetail = () => {
                   const parts = para.split(/(\*\*.*?\*\*)/g);
                   const renderedPara = parts.map((part, index) => {
                     if (part.startsWith('**') && part.endsWith('**')) {
-                      return <strong key={index} className="font-bold text-ink">{part.slice(2, -2)}</strong>;
+                      return <strong key={index} className={`font-bold ${project.title === 'Impulsive' ? 'text-[#2D2730]' : 'text-ink'}`}>{part.slice(2, -2)}</strong>;
                     }
                     return part;
                   });
-                  return <p key={i}>{renderedPara}</p>;
+                  return <p key={i} className={project.title === 'Impulsive' ? 'text-[#2D2730]/80 font-medium' : ''}>{renderedPara}</p>;
                 })}
               </div>
             </div>
@@ -303,26 +357,26 @@ export const ProjectDetail = () => {
             transition={{ duration: 0.8 }}
             className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-32"
           >
-            <div className="lg:col-span-8 rounded-[32px] overflow-hidden shadow-2xl bg-gray-100">
+            <div className={`lg:col-span-8 overflow-hidden shadow-2xl ${project.title === 'Impulsive' ? 'rounded-[40px] bg-white/40 backdrop-blur-md p-3 ring-1 ring-white/60' : 'rounded-[32px] bg-gray-100'}`}>
               <img 
                 src={project.screenshots[0].image} 
                 alt={project.screenshots[0].title}
-                className="w-full h-auto"
+                className={`w-full h-auto ${project.title === 'Impulsive' ? 'rounded-[32px]' : ''}`}
                 referrerPolicy="no-referrer"
               />
             </div>
             <div className="lg:col-span-4">
-              <h3 className="text-2xl font-bold mb-4 uppercase tracking-tighter">{project.screenshots[0].title}</h3>
+              <h3 className={`text-2xl font-bold mb-4 uppercase tracking-tighter ${project.title === 'Impulsive' ? 'text-[#2D2730]' : ''}`}>{project.screenshots[0].title}</h3>
               <div className="text-gray-600 leading-relaxed whitespace-pre-line space-y-4">
                 {project.screenshots[0].description.split('\n\n').map((para, i) => {
                   const parts = para.split(/(\*\*.*?\*\*)/g);
                   const renderedPara = parts.map((part, index) => {
                     if (part.startsWith('**') && part.endsWith('**')) {
-                      return <strong key={index} className="font-bold text-ink">{part.slice(2, -2)}</strong>;
+                      return <strong key={index} className={`font-bold ${project.title === 'Impulsive' ? 'text-[#2D2730]' : 'text-ink'}`}>{part.slice(2, -2)}</strong>;
                     }
                     return part;
                   });
-                  return <p key={i}>{renderedPara}</p>;
+                  return <p key={i} className={project.title === 'Impulsive' ? 'text-[#2D2730]/80 font-medium' : ''}>{renderedPara}</p>;
                 })}
               </div>
             </div>
@@ -340,26 +394,26 @@ export const ProjectDetail = () => {
                   transition={{ duration: 0.8, delay: idx * 0.1 }}
                   className="flex flex-col"
                 >
-                  <div className={`rounded-[32px] overflow-hidden shadow-xl bg-gray-100 mb-8 ${screenshot.isPortrait ? 'aspect-[3/4] flex items-center justify-center' : ''}`}>
+                  <div className={`overflow-hidden shadow-xl mb-8 ${project.title === 'Impulsive' ? 'rounded-[40px] bg-white/40 backdrop-blur-md p-3 ring-1 ring-white/60' : 'rounded-[32px] bg-gray-100'} ${screenshot.isPortrait ? 'aspect-[3/4] flex items-center justify-center' : ''}`}>
                     <img 
                       src={screenshot.image} 
                       alt={screenshot.title}
-                      className={`${screenshot.isPortrait ? 'h-full w-auto object-contain' : 'w-full h-auto'}`}
+                      className={`${screenshot.isPortrait ? 'h-full w-auto object-contain' : 'w-full h-auto'} ${project.title === 'Impulsive' ? 'rounded-[32px]' : ''}`}
                       referrerPolicy="no-referrer"
                     />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold mb-3 uppercase tracking-tighter">{screenshot.title}</h3>
+                    <h3 className={`text-xl font-bold mb-3 uppercase tracking-tighter ${project.title === 'Impulsive' ? 'text-[#2D2730]' : ''}`}>{screenshot.title}</h3>
                     <div className="text-sm text-gray-600 leading-relaxed whitespace-pre-line space-y-3">
                       {screenshot.description.split('\n\n').map((para, i) => {
                         const parts = para.split(/(\*\*.*?\*\*)/g);
                         const renderedPara = parts.map((part, index) => {
                           if (part.startsWith('**') && part.endsWith('**')) {
-                            return <strong key={index} className="font-bold text-ink">{part.slice(2, -2)}</strong>;
+                            return <strong key={index} className={`font-bold ${project.title === 'Impulsive' ? 'text-[#2D2730]' : 'text-ink'}`}>{part.slice(2, -2)}</strong>;
                           }
                           return part;
                         });
-                        return <p key={i}>{renderedPara}</p>;
+                        return <p key={i} className={project.title === 'Impulsive' ? 'text-[#2D2730]/80 font-medium' : ''}>{renderedPara}</p>;
                       })}
                     </div>
                   </div>
@@ -377,26 +431,26 @@ export const ProjectDetail = () => {
               transition={{ duration: 0.8 }}
               className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"
             >
-              <div className="lg:col-span-8 rounded-[32px] overflow-hidden shadow-2xl bg-gray-100 lg:order-2">
+              <div className={`lg:col-span-8 overflow-hidden shadow-2xl lg:order-2 ${project.title === 'Impulsive' ? 'rounded-[40px] bg-white/40 backdrop-blur-md p-3 ring-1 ring-white/60' : 'rounded-[32px] bg-gray-100'}`}>
                 <img 
                   src={project.screenshots[project.screenshots.length - 1].image} 
                   alt={project.screenshots[project.screenshots.length - 1].title}
-                  className="w-full h-auto"
+                  className={`w-full h-auto ${project.title === 'Impulsive' ? 'rounded-[32px]' : ''}`}
                   referrerPolicy="no-referrer"
                 />
               </div>
               <div className="lg:col-span-4 lg:order-1">
-                <h3 className="text-2xl font-bold mb-4 uppercase tracking-tighter">{project.screenshots[project.screenshots.length - 1].title}</h3>
+                <h3 className={`text-2xl font-bold mb-4 uppercase tracking-tighter ${project.title === 'Impulsive' ? 'text-[#2D2730]' : ''}`}>{project.screenshots[project.screenshots.length - 1].title}</h3>
                 <div className="text-gray-600 leading-relaxed whitespace-pre-line space-y-4">
                   {project.screenshots[project.screenshots.length - 1].description.split('\n\n').map((para, i) => {
                     const parts = para.split(/(\*\*.*?\*\*)/g);
                     const renderedPara = parts.map((part, index) => {
                       if (part.startsWith('**') && part.endsWith('**')) {
-                        return <strong key={index} className="font-bold text-ink">{part.slice(2, -2)}</strong>;
+                        return <strong key={index} className={`font-bold ${project.title === 'Impulsive' ? 'text-[#2D2730]' : 'text-ink'}`}>{part.slice(2, -2)}</strong>;
                       }
                       return part;
                     });
-                    return <p key={i}>{renderedPara}</p>;
+                    return <p key={i} className={project.title === 'Impulsive' ? 'text-[#2D2730]/80 font-medium' : ''}>{renderedPara}</p>;
                   })}
                 </div>
               </div>
@@ -404,6 +458,7 @@ export const ProjectDetail = () => {
           )}
         </div>
       )}
+      </div>
     </div>
   );
 };

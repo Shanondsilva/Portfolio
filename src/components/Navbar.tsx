@@ -27,7 +27,6 @@ export const Navbar = () => {
     { name: 'EXPERIENCE', to: '/#experience' },
     { name: 'ABOUT', to: '/#about' },
     { name: 'PROJECTS', to: '/#projects' },
-    { name: 'EDUCATION & CERTIFICATIONS', to: '/#certifications' },
     { name: 'Q&A', to: '/#faq' },
   ];
 
