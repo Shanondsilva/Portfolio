@@ -11,7 +11,7 @@ const projects = [
     tech: 'Kotlin · Jetpack Compose · MVVM · SQLCipher',
     status: 'LIVE PRODUCT',
     description: 'Privacy-first Android product built and launched end to end.',
-    image: 'https://images.unsplash.com/photo-1607252656733-fd7420c2420a?w=800&q=80',
+    image: 'https://i.ibb.co/vgH1Qrc/app-icon-512x512-B-brand-pastel.png',
     color: 'bg-zinc-900',
     link: ''
   },
@@ -22,7 +22,7 @@ const projects = [
     tech: 'Python · Local AI · Ollama · Speech',
     status: 'ACTIVE DEVELOPMENT',
     description: 'Local-first desktop AI assistant designed around private on-device workflows and voice interaction.',
-    image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&q=80',
+    image: 'https://i.ibb.co/GffMp0GC/HARI-Image-horizontal.png',
     color: 'bg-zinc-800'
   },
   {
@@ -64,16 +64,19 @@ export const Portfolio = () => {
             onClick={() => navigate(`/project/${project.id}`)}
             className="group cursor-pointer flex flex-col"
           >
-            <div className={`relative aspect-[4/3] overflow-hidden rounded-3xl bg-gray-100 ${project.id === '001' ? 'ring-1 ring-black/10 shadow-lg' : ''}`}>
+            <div className={`relative aspect-[4/3] overflow-hidden rounded-3xl ${project.id === '001' ? 'bg-gradient-to-br from-[#FFFDF8] to-[#FFFDF8] ring-1 ring-black/5 shadow-lg' : project.id === '002' ? 'bg-[#2A080C] ring-1 ring-black/5 shadow-lg' : 'bg-gray-100'}`}>
+              {project.id === '001' && (
+                <div className="absolute inset-0 bg-gradient-to-br from-[#D0C3F1]/30 via-[#BDE0FE]/30 to-[#FEF1AB]/30 mix-blend-multiply pointer-events-none" />
+              )}
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                className={`transition-transform duration-700 group-hover:scale-105 ${project.id === '001' ? 'w-full h-full object-contain p-8 md:p-12 relative z-10 drop-shadow-xl' : project.id === '002' ? 'w-full h-full object-contain p-6 md:p-10 relative z-10' : 'w-full h-full object-cover'}`}
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 pointer-events-none" />
               
-              <div className="absolute bottom-6 left-6 flex items-center gap-2">
+              <div className="absolute bottom-6 left-6 flex items-center gap-2 z-30">
                 {project.link ? (
                   <a 
                     href={project.link} 

@@ -10,7 +10,7 @@ export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
-  const isRoastDPage = location.pathname === '/project/002';
+  const isRoastDPage = location.pathname === '/project/004';
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -167,7 +167,7 @@ export const Navbar = () => {
 export const ScrollProgress = () => {
   const { scrollYProgress } = useScroll();
   const location = useLocation();
-  const isRoastDPage = location.pathname === '/project/002';
+  const isRoastDPage = location.pathname === '/project/004';
   
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,

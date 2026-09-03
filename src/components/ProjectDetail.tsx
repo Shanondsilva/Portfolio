@@ -14,6 +14,7 @@ interface Project {
   link: string;
   base44Link?: string;
   sourceLink?: string;
+  playStoreLink?: string;
   video?: {
     url: string;
     description: string;
@@ -32,16 +33,56 @@ const projectData: Record<string, Project> = {
     tagline: 'Different moments need different kinds of support.',
     category: 'Android Product',
     description: [
-      "Impulsive started from a simple observation: the same person can open the same app for completely different reasons. At one moment the action may be completely intentional. At another, the same action can happen almost automatically. I became interested in whether support could respond differently to those moments instead of applying the same restriction every time.",
-      "That thinking shaped features such as Moment Plans, Familiar Steps and protected periods. A Moment Plan lets someone prepare a small preferred action before a difficult moment arrives. Familiar Steps can bring back actions that have previously been useful rather than constantly introducing new advice. The underlying principle is that Impulsive can support a decision without taking ownership of it.",
-      "I built Impulsive as an Android product using Kotlin and Jetpack Compose, taking it from product definition and architecture through implementation, testing and release. As the product became more flexible, Android state and lifecycle behaviour became part of the product problem itself.",
-      "Impulsive was then released through Google Play. Moving from testing something on my own device to putting it in front of real users changed how I evaluated the product. Small transitions, timing decisions and state behaviour that looked like engineering details could materially change the experience."
+      "**INTRODUCTION**",
+      "Impulsive started from a simple observation: the same person can open the same app for completely different reasons. At one moment the action may be completely intentional. At another, the same action can happen almost automatically.",
+      "**THE PRODUCT IDEA**",
+      "Impulsive was built around that difference rather than treating every interaction as identical. It provides support during difficult moments without simply applying the same restriction every time.",
+      "**WHAT I BUILT**",
+      "I engineered core features including **Moment Plans** (preparing a small preferred action before a difficult moment arrives), **Familiar Steps** (bringing back previously useful actions), and **protected periods**.",
+      "The entire Android product was intentionally designed around privacy-conscious local data handling.",
+      "**BUILDING AND SHIPPING IT**",
+      "I built Impulsive as an Android product using Kotlin and Jetpack Compose, owning it from product definition and architecture through implementation, testing, and Google Play release."
     ],
     techStack: ["Kotlin", "Jetpack Compose", "MVVM", "Room", "SQLCipher", "DataStore", "Google Play"],
     mediumLink: "https://medium.com/@shanondsilva2135/at-1pm-opening-the-app-was-fine-at-11-47pm-it-was-different-daad2daa7258",
-    image: 'https://images.unsplash.com/photo-1607252656733-fd7420c2420a?w=800&q=80',
+    image: 'https://i.ibb.co/r20vcJLG/feature-graphic-1024x500-day.jpg',
     link: 'https://useimpulsive.com/',
-    screenshots: []
+    playStoreLink: 'https://play.google.com/store/apps/details?id=com.impulsive.app',
+    screenshots: [
+      {
+        image: 'https://i.ibb.co/M5fpdvMJ/phone-1-home.jpg',
+        title: 'Privacy-First Architecture',
+        description: 'The product was built with local-first data principles using **Room** and **SQLCipher** to ensure sensitive habit and app-usage data remains entirely on-device and private.',
+        isPortrait: true
+      },
+      {
+        image: 'https://i.ibb.co/WpqyDfyK/Chat-GPT-Image-Aug-27-2026-11-35-06-PM.png',
+        title: 'Different Moments, Different Support',
+        description: 'Editorial illustration representing the core concept: digital moments can be calm and intentional, or chaotic and impulsive. The product bridges that gap by offering support that respects the context of the interaction.'
+      }
+    ]
+  },
+  '002': {
+    title: 'HARI',
+    tagline: 'AI assistance that lives closer to the machine.',
+    category: 'Local AI Assistant',
+    description: [
+      "HARI started as a personal project for my own daily computer use. I wanted an assistant that could learn from repeated tasks, remember useful patterns and combine that experience with local AI reasoning instead of starting from zero every time.",
+      "I built it around voice interaction, deterministic computer actions and local models through Ollama, so I can speak to it naturally and use it for practical desktop tasks.",
+      "The inspiration came partly from JARVIS in Iron Man the idea of technology that feels present and useful rather than just another chat window. The Labrador in HARI’s identity represents that same idea: a dependable companion that stays alongside you and becomes more familiar with how you work."
+    ],
+    techStack: ["Python", "Local AI", "Ollama", "Speech"],
+    mediumLink: "",
+    image: 'https://i.ibb.co/GffMp0GC/HARI-Image-horizontal.png',
+    link: '',
+    screenshots: [
+      {
+        image: 'https://i.ibb.co/mFczyvc3/HARI-image.png',
+        title: 'Dependable Digital Companionship',
+        description: 'The HARI identity uses the Labrador as a symbol of dependable companionship — technology designed to stay close, respond when needed and work alongside the user.',
+        isPortrait: true
+      }
+    ]
   },
   '003': {
     title: 'MesaQ',
@@ -136,7 +177,7 @@ export const ProjectDetail = () => {
   }
 
   return (
-    <div className={`min-h-screen relative overflow-hidden ${project.title === 'Impulsive' ? 'bg-[#FFFDF8] text-[#2D2730]' : 'bg-white text-ink'}`}>
+    <div className={`min-h-screen relative overflow-hidden ${project.title === 'Impulsive' ? 'bg-[#FFFDF8] text-[#2D2730]' : project.title === 'HARI' ? 'bg-[#120406] text-[#F9F6F6]' : 'bg-white text-ink'}`}>
       {project.title === 'Impulsive' && (
         <div className="fixed inset-0 pointer-events-none overflow-hidden flex justify-center items-center z-0">
           <motion.div 
@@ -158,7 +199,7 @@ export const ProjectDetail = () => {
       )}
 
       <div className="pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto relative z-10">
-        <Link to="/" className={`inline-flex items-center gap-2 transition-colors mb-12 uppercase text-xs font-bold tracking-widest ${project.title === 'Impulsive' ? 'text-[#2D2730]/60 hover:text-[#2D2730]' : 'text-gray-500 hover:text-ink'}`}>
+        <Link to="/" className={`inline-flex items-center gap-2 transition-colors mb-12 uppercase text-xs font-bold tracking-widest ${project.title === 'Impulsive' ? 'text-[#2D2730]/60 hover:text-[#2D2730]' : project.title === 'HARI' ? 'text-[#F9F6F6]/60 hover:text-[#F9F6F6]' : 'text-gray-500 hover:text-ink'}`}>
           <ArrowLeft className="w-4 h-4" /> Back to Portfolio
         </Link>
 
@@ -169,10 +210,10 @@ export const ProjectDetail = () => {
             transition={{ duration: 0.6 }}
           >
             <div className="mb-4">
-              <span className={`text-xs font-bold tracking-widest uppercase ${project.title === 'RoastD' ? 'text-[#86102a]' : project.title === 'Impulsive' ? 'text-[#2D2730] bg-[#D0C3F1]/40 px-3 py-1 rounded-full' : 'text-accent'}`}>
+              <span className={`text-xs font-bold tracking-widest uppercase ${project.title === 'RoastD' ? 'text-[#86102a]' : project.title === 'Impulsive' ? 'text-[#2D2730] bg-[#D0C3F1]/40 px-3 py-1 rounded-full' : project.title === 'HARI' ? 'text-[#e54b61]' : 'text-accent'}`}>
                 {project.category}
               </span>
-              <h1 className={`text-5xl md:text-7xl font-bold tracking-tighter uppercase mt-4 ${project.title === 'Impulsive' ? 'text-[#2D2730]' : ''}`}>
+              <h1 className={`text-5xl md:text-7xl font-bold tracking-tighter uppercase mt-4 ${project.title === 'Impulsive' ? 'text-[#2D2730]' : project.title === 'HARI' ? 'text-[#F9F6F6]' : ''}`}>
                 {project.title}
               </h1>
               {project.title === 'Impulsive' && (
@@ -180,7 +221,7 @@ export const ProjectDetail = () => {
               )}
             </div>
             
-            <h2 className={`text-3xl md:text-4xl font-serif italic mb-8 leading-tight ${project.title === 'Impulsive' ? 'text-[#2D2730]/80' : 'text-gray-400'}`}>
+            <h2 className={`text-3xl md:text-4xl font-serif italic mb-8 leading-tight ${project.title === 'Impulsive' ? 'text-[#2D2730]/80' : project.title === 'HARI' ? 'text-[#F9F6F6]/80' : 'text-gray-400'}`}>
               {project.tagline}
             </h2>
           
@@ -196,7 +237,7 @@ export const ProjectDetail = () => {
                   return (
                     <strong 
                       key={index} 
-                      className={`font-bold ${project.title === 'Impulsive' ? 'text-[#2D2730]' : 'text-ink'}`}
+                      className={`font-bold ${project.title === 'Impulsive' ? 'text-[#2D2730]' : project.title === 'HARI' ? 'text-[#F9F6F6]' : 'text-ink'}`}
                     >
                       {part.slice(2, -2)}
                     </strong>
@@ -210,8 +251,8 @@ export const ProjectDetail = () => {
                   key={i} 
                   className={`text-lg leading-relaxed ${
                     isHeading 
-                      ? `text-3xl font-bold mb-2 mt-8 first:mt-0 ${project.title === 'Impulsive' ? 'text-[#2D2730]' : 'text-ink'}` 
-                      : `${project.title === 'Impulsive' ? 'text-[#2D2730]/80 font-medium' : 'text-gray-600'}`
+                      ? `text-3xl font-bold mb-2 mt-8 first:mt-0 ${project.title === 'Impulsive' ? 'text-[#2D2730]' : project.title === 'HARI' ? 'text-[#F9F6F6]' : 'text-ink'}` 
+                      : `${project.title === 'Impulsive' ? 'text-[#2D2730]/80 font-medium' : project.title === 'HARI' ? 'text-[#F9F6F6]/80 font-medium' : 'text-gray-600'}`
                   }`}
                 >
                   {renderedPara}
@@ -243,6 +284,8 @@ export const ProjectDetail = () => {
                 if (i % 3 === 0) chipClass = "px-4 py-1.5 bg-[#D0C3F1] text-black text-[10px] font-bold uppercase tracking-widest rounded-full shadow-sm";
                 else if (i % 3 === 1) chipClass = "px-4 py-1.5 bg-[#BDE0FE] text-black text-[10px] font-bold uppercase tracking-widest rounded-full shadow-sm";
                 else chipClass = "px-4 py-1.5 bg-[#FEF1AB] text-black text-[10px] font-bold uppercase tracking-widest rounded-full shadow-sm";
+              } else if (project.title === 'HARI') {
+                chipClass = "px-4 py-1.5 bg-[#3a0b12] text-[#e54b61] border border-[#e54b61]/30 text-[10px] font-bold uppercase tracking-widest rounded-full shadow-sm";
               }
               return (
                 <span 
@@ -266,6 +309,19 @@ export const ProjectDetail = () => {
                 }`}
               >
                 {project.title === 'RoastD' ? 'RoastD by Claude Code' : project.title === 'Impulsive' ? 'Visit Impulsive' : 'Visit Live Site'}
+                <ExternalLink className="w-4 h-4" />
+              </a>
+            )}
+            {project.playStoreLink && (
+              <a 
+                href={project.playStoreLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold transition-all duration-300 group ${
+                  project.title === 'RoastD' ? 'bg-[#86102a] text-white hover:opacity-90' : project.title === 'Impulsive' ? 'bg-gradient-to-r from-[#D0C3F1] via-[#BDE0FE] to-[#FEF1AB] text-[#2D2730] hover:saturate-150 hover:-translate-y-0.5 shadow-sm hover:shadow-md' : 'bg-accent text-white hover:opacity-90'
+                }`}
+              >
+                View on Google Play
                 <ExternalLink className="w-4 h-4" />
               </a>
             )}
@@ -298,12 +354,12 @@ export const ProjectDetail = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className={`overflow-hidden shadow-2xl sticky top-32 ${project.title === 'Impulsive' ? 'rounded-[40px] bg-white/40 backdrop-blur-md p-3 ring-1 ring-white/60 shadow-xl' : 'rounded-[40px]'}`}
+          className={`overflow-hidden shadow-2xl sticky top-32 flex items-center justify-center ${project.title === 'Impulsive' ? 'rounded-[40px] bg-white/40 backdrop-blur-md p-3 ring-1 ring-white/60 shadow-xl' : project.title === 'HARI' ? 'rounded-[32px] bg-[#2a080c] ring-1 ring-[#e54b61]/20' : 'rounded-[40px]'}`}
         >
           <img 
             src={project.image} 
             alt={project.title}
-            className={`w-full h-auto object-cover ${project.title === 'Impulsive' ? 'rounded-[32px]' : ''}`}
+            className={`${project.title === 'HARI' ? 'w-full md:w-auto h-auto max-h-[70vh] object-contain' : 'w-full h-auto object-cover'} ${project.title === 'Impulsive' ? 'rounded-[32px]' : ''}`}
             referrerPolicy="no-referrer"
           />
         </motion.div>
@@ -357,26 +413,26 @@ export const ProjectDetail = () => {
             transition={{ duration: 0.8 }}
             className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-32"
           >
-            <div className={`lg:col-span-8 overflow-hidden shadow-2xl ${project.title === 'Impulsive' ? 'rounded-[40px] bg-white/40 backdrop-blur-md p-3 ring-1 ring-white/60' : 'rounded-[32px] bg-gray-100'}`}>
+            <div className={`lg:col-span-8 overflow-hidden shadow-2xl flex items-center justify-center ${project.title === 'Impulsive' ? 'rounded-[40px] bg-white/40 backdrop-blur-md p-3 ring-1 ring-white/60' : project.title === 'HARI' ? 'rounded-[32px] bg-[#2a080c] ring-1 ring-[#e54b61]/20' : 'rounded-[32px] bg-gray-100'}`}>
               <img 
                 src={project.screenshots[0].image} 
                 alt={project.screenshots[0].title}
-                className={`w-full h-auto ${project.title === 'Impulsive' ? 'rounded-[32px]' : ''}`}
+                className={`${project.screenshots[0].isPortrait ? 'w-full md:w-auto h-auto md:max-h-[70vh] object-contain mx-auto' : 'w-full h-auto'} ${project.title === 'Impulsive' ? 'rounded-[32px]' : ''}`}
                 referrerPolicy="no-referrer"
               />
             </div>
             <div className="lg:col-span-4">
-              <h3 className={`text-2xl font-bold mb-4 uppercase tracking-tighter ${project.title === 'Impulsive' ? 'text-[#2D2730]' : ''}`}>{project.screenshots[0].title}</h3>
+              <h3 className={`text-2xl font-bold mb-4 uppercase tracking-tighter ${project.title === 'Impulsive' ? 'text-[#2D2730]' : project.title === 'HARI' ? 'text-[#F9F6F6]' : ''}`}>{project.screenshots[0].title}</h3>
               <div className="text-gray-600 leading-relaxed whitespace-pre-line space-y-4">
                 {project.screenshots[0].description.split('\n\n').map((para, i) => {
                   const parts = para.split(/(\*\*.*?\*\*)/g);
                   const renderedPara = parts.map((part, index) => {
                     if (part.startsWith('**') && part.endsWith('**')) {
-                      return <strong key={index} className={`font-bold ${project.title === 'Impulsive' ? 'text-[#2D2730]' : 'text-ink'}`}>{part.slice(2, -2)}</strong>;
+                      return <strong key={index} className={`font-bold ${project.title === 'Impulsive' ? 'text-[#2D2730]' : project.title === 'HARI' ? 'text-[#F9F6F6]' : 'text-ink'}`}>{part.slice(2, -2)}</strong>;
                     }
                     return part;
                   });
-                  return <p key={i} className={project.title === 'Impulsive' ? 'text-[#2D2730]/80 font-medium' : ''}>{renderedPara}</p>;
+                  return <p key={i} className={project.title === 'Impulsive' ? 'text-[#2D2730]/80 font-medium' : project.title === 'HARI' ? 'text-[#F9F6F6]/80 font-medium' : ''}>{renderedPara}</p>;
                 })}
               </div>
             </div>
