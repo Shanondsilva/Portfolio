@@ -21,7 +21,7 @@ const projects = [
     category: 'Local AI Assistant',
     tech: 'Python · Local AI · Ollama · Speech',
     status: 'ACTIVE DEVELOPMENT',
-    description: 'Local-first desktop AI assistant designed around private on-device workflows and voice interaction.',
+    description: 'Local-first desktop AI assistant designed around on-device workflows and voice interaction.',
     image: 'https://i.ibb.co/GffMp0GC/HARI-Image-horizontal.png',
     color: 'bg-zinc-800'
   },
