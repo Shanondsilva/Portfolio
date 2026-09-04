@@ -69,7 +69,7 @@ const projectData: Record<string, Project> = {
     description: [
       "HARI started as a personal project for my own daily computer use. I wanted an assistant that could learn from repeated tasks, remember useful patterns and combine that experience with local AI reasoning instead of starting from zero every time.",
       "I built it around voice interaction, deterministic computer actions and local models through Ollama, so I can speak to it naturally and use it for practical desktop tasks.",
-      "The inspiration came partly from JARVIS in Iron Man the idea of technology that feels present and useful rather than just another chat window. The Labrador in HARI’s identity represents that same idea: a dependable companion that stays alongside you and becomes more familiar with how you work."
+      "The inspiration came partly from JARVIS in Iron Man, specifically the idea of technology that feels present and useful rather than just another chat window. The Labrador in HARI’s identity represents that same idea: a dependable companion that stays alongside you and becomes more familiar with how you work."
     ],
     techStack: ["Python", "Local AI", "Ollama", "Speech"],
     mediumLink: "",
